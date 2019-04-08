@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lottery>
+    <!-- 彩票开奖日期 -->
+    <week>
+        <monday>daletou</monday>
+        <tuesday>shuangseqiu,qixingcai</tuesday>
+        <wednesday>daletou</wednesday>
+        <thursday>shuangseqiu</thursday>
+        <friday>qixingcai</friday>
+        <saturday>daletou</saturday>
+        <sunday>shuangseqiu,qixingcai</sunday>
+    </week>
+    <!-- 定义彩票中奖规则 -->
+    <codes>
+        <!-- 大乐透：5个红球，2个蓝球 -->
+        <code name="daletou" red="5" blue="2" filter="lottery.DisorderFilter">
+            <url>http://f.apiplus.net/dlt-1.json</url>
+            <bonuses>
+                <bouns red="5" blue="2" money="500W"/>
+                <bouns red="5" blue="1" money="10W"/>
+                <bouns red="5" blue="0" money="1W"/>
+                <bouns red="4" blue="2" money="3000"/>
+                <bouns red="4" blue="1" money="300"/>
+                <bouns red="3" blue="2" money="200"/>
+                <bouns red="4" blue="0" money="100"/>
+                <bouns red="3" blue="1" money="15"/>
+                <bouns red="3" blue="0" money="5"/>
+                <bouns red="2" blue="1" money="5"/>
+                <bouns red="1" blue="2" money="5"/>
+                <bouns red="0" blue="2" money="5"/>
+            </bonuses>
+        </code>
+        <code name="shuangseqiu" red="6" blue="1" filter="lottery.DisorderFilter">
+            <url>http://f.apiplus.net/ssq-1.json</url>
+            <bonuses>
+                <bouns red="6" blue="1" money="500W"/>
+                <bouns red="6" blue="0" money="10W"/>
+                <bouns red="5" blue="1" money="3000"/>
+                <bouns red="5" blue="0" money="200"/>
+                <bouns red="4" blue="0" money="10"/>
+                <bouns red="3" blue="1" money="10"/>
+                <bouns red="2" blue="1" money="5"/>
+                <bouns red="1" blue="1" money="5"/>
+                <bouns red="0" blue="1" money="5"/>
+            </bonuses>
+        </code>
+        <code name="qixingcai" red="7" blue="0" filter="lottery.SortFilter">
+            <url>http://f.apiplus.net/qxc-1.json</url>
+            <bonuses>
+                <bouns red="7" blue="0" money="500W"/>
+                <bouns red="6" blue="0" money="10W"/>
+                <bouns red="5" blue="0" money="1800"/>
+                <bouns red="4" blue="0" money="300"/>
+                <bouns red="3" blue="0" money="20"/>
+                <bouns red="2" blue="0" money="5"/>
+            </bonuses>
+        </code>
+    </codes>
+    <!-- 你购买的彩票号码 -->
+    <your>
+        <lotte name="daletou" code="01,02,03,04,05+06,07"/>
+        <lotte name="daletou" code="01,02,03,04,05+07,08"/>
+        <lotte name="shuangseqiu" code="01,02,03,04,05,07+08"/>
+        <lotte name="shuangseqiu" code="01,02,03,04,05,07+09"/>
+        <lotte name="qixingcai" code="1,2,3,4,5,6,7"/>
+    </your>
+</lottery>
